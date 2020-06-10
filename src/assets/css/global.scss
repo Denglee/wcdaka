@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/*lideng*/
+@import "themeClore";
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  position: relative;
+  //font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  //font-family: '黑体', Source Han Sans CN,PingFangSC-Regular,sans-serif,Helvetica Neue, Helvetica, Arial;
+  line-height: 1.5;
+  color: #323232;
+}
+
+body {
+  font-size: 14px;
+  min-width: 320px;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #323232;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/*去除a点击之后的背景*/
+a:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/*清楚浮动*/
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+input, button {
+  border: none;
+  outline: none;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset !important;
+}
+
+/*省略号*/
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+
+
+/*============ 初始样式 到此结束 ============*/
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+/*通用*/
+.contain-public {
+  padding: 20px;
+  width: 100%;
+  min-height: calc(100vh - 106px);
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: $color-linghtWhite;
+  .bgWhite{
+    background-color: #fff;
+    padding: 20px;
+    min-height: 70vh;
+    border-radius: 20px;
+  }
+}
+
+.pubWidth {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+
+
+
+/*============ 公共部分  开始 ============*/
+
+
+/*公共头部*/
+//.icon {
+//  width: 1em;
+//  height: 1em;
+//  vertical-align: -0.15em;
+//  fill: currentColor;
+//  overflow: hidden;
+//}
+
+
+
+/*环绕*/
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex{
+  display: flex;
+}
+
+@mixin borBom($wid, $color) {
+  border-bottom: solid $wid $color,;
+}
+
+@mixin bor($wid, $color) {
+  border: solid $wid $color,;
+}
+
+@mixin borRadis($wid) {
+  border-radius: $wid;
+}
+
+
+
+//轮播图
+.img-banner{
+
+}

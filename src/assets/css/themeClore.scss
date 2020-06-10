@@ -1,0 +1,84 @@
+//公共颜色
+$color-Black:#333;
+$color-Green:#8cc31f;
+$color-DarkBlue: #253954;
+$color-White:#fff;
+$color-Gray: #949494;
+
+$color-linghtBlue:#DADFE8;
+$color-inputBor:#DCDFE6;
+$color-paleWhite:#f4f4f4;
+$color-linghtWhite:#eff2f9;  /*主打灰*/
+$color-GrayE5:#EFEEF5;
+
+
+$color-Pink:#ff8a7e;
+$color-MediumBlue:#005ad4;
+$color-MediumBlue2:#00a0e9;
+$color-Violet:#8763ce;
+$color-GreenBlue:#1eaaa1;
+$color-LigntBlue:#4ccbeb;
+$color-LigntBlue2:#5b5ec7;
+$color-Yellow:#ffbe00;
+
+$color-thBG:rgba(0,90,212,0.03);
+
+
+
+@mixin fontColor($color){
+  color:$color;
+}
+.colorGray{
+  @include fontColor($color-inputBor);
+}
+.color-Pink{
+  @include fontColor($color-Pink);
+}
+.color-MediumBlue{
+  @include fontColor($color-MediumBlue);
+}
+.color-MediumBlue2{
+  @include fontColor($color-MediumBlue2);
+}
+.color-Violet{
+  @include fontColor($color-Violet);
+}
+.color-GreenBlue{
+  @include fontColor($color-GreenBlue);
+}
+.color-LigntBlue{
+  @include fontColor($color-LigntBlue);
+}
+.color-LigntBlue2{
+  @include fontColor($color-LigntBlue2);
+}
+.color-Yellow{
+  @include fontColor($color-Yellow);
+}
+
+///*项目营收*/
+.colorBgGreenLignt{
+  background-color:#ff8a7e;
+}
+.colorBgViolet{
+  background-color:#005ad4;
+}
+.colorBgPink{
+  background-color:#00a0e9;
+}
+.colorBgRed{
+  background-color:#8763ce;
+}
+.colorBgGreen{
+  background-color:#1eaaa1;
+}
+.colorBgBlueDark{
+  background-color:#4ccbeb;
+}
+.colorBgYellow{
+  background-color:#5b5ec7;
+}
+.colorBgBlueGreen{
+  background-color:#ffbe00;
+}
+
