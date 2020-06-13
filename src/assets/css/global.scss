@@ -1,8 +1,6 @@
 @charset "UTF-8";
 /*lideng*/
-@import "themeClore";
-
-
+@import "themeColor";
 
 * {
   margin: 0;
@@ -13,7 +11,7 @@
 html, body {
   position: relative;
   //font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  //font-family: '黑体', Source Han Sans CN,PingFangSC-Regular,sans-serif,Helvetica Neue, Helvetica, Arial;
+  //font-family: '黑体', Source Han Sans CN,PingFangSC-Regular,sans-serif,Helvetica Neue, Helvetica, Arial;  
   line-height: 1.5;
   color: #323232;
 }
@@ -77,7 +75,6 @@ input:-webkit-autofill {
 }
 
 
-
 /*============ 初始样式 到此结束 ============*/
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -133,6 +130,16 @@ input:-webkit-autofill {
   display: flex;
 }
 
+.no-data{
+  text-align: center;
+  margin-top: 10px;
+  color: #8D8D8D;
+  width: 100%;
+  .van-empty{
+    padding: 4px 0;
+  }
+}
+
 @mixin borBom($wid, $color) {
   border-bottom: solid $wid $color,;
 }
@@ -141,13 +148,84 @@ input:-webkit-autofill {
   border: solid $wid $color,;
 }
 
-@mixin borRadis($wid) {
+@mixin borRadius($wid) {
   border-radius: $wid;
+}
+
+/*组件*/
+/*日期切换  选择*/
+.dayTime-ul{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  border-bottom: solid 1px $themeBgColor;
+  margin-bottom: .1rem;
+  li{
+    flex: 1;
+    padding: .1rem 0;
+  }
+  .active-dayTime{
+    color: $themeColor;
+    border-bottom: solid 2px $themeColor;
+  }
 }
 
 
 
-//轮播图
+//首页轮播图
+//.index-swipe{
+//
+//}
 .img-banner{
+  img{
+    @include borRadius(6px);
+    height: 1.2rem;
+  }
+}
 
+.main-width92{
+  width: 100%;
+  padding: 4%;
+  box-sizing: border-box;
+}
+.index-router{
+  text-align: center;
+  padding: .15rem 0;
+  img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+  .routerName{
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    //font-size: 14px;
+    margin-top: .1rem;
+
+  }
+}
+.index-title{
+  margin: .2rem 0 .1rem;
+}
+
+
+//私教列表
+.trainer-itemUl{
+
+}
+.trainer-item{
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  &:not(:last-of-type){
+    border-bottom: solid 1px $themeBgColor;
+  }
+  .img-trainer{
+    img{
+      width: .6rem;
+      height: .6rem;
+      @include borRadius(50%)
+    }
+  }
 }

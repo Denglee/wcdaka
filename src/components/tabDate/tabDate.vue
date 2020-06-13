@@ -17,7 +17,6 @@
         data() {
             return {
                 checkedDayNum:'',
-
             }
         },
         methods: {
@@ -32,15 +31,3 @@
         },
     }
 </script>
-<style lang="scss">
-    .dayTime-ul{
-        width: 100%;
-        li{
-            display: inline-block;
-        }
-        .active-dayTime{
-            color: red;
-        }
-    }
-
-</style>

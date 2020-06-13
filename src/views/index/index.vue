@@ -1,29 +1,44 @@
 <template>
-    <div class="box">
-        <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+    <div class="main-width92">
+        <van-swipe class="index-swipe" :autoplay="3000" indicator-color="white">
             <van-swipe-item v-for = "(item,index) in indexArr.image" :key = 'index'>
                 <van-image
                     class="img-banner"
-                    fit="contain"
+                    fit="cover"
                     :src="item"/>
             </van-swipe-item>
         </van-swipe>
 
         <!--四大导航-->
-        <van-grid :gutter="10">
-            <van-grid-item v-for="(item, index) in routers" :key="index" :icon="item.icon" >
+        <van-row type="flex" justify="space-between" :gutter="10">
+            <van-col span="8" v-for="(item, index) in routers" :key="index" class="index-router">
                 <router-link :to="item.url">
                     <img :src="item.icon" alt="">
-                    {{item.name}}
+                    <div class="routerName">{{item.name}}</div>
                 </router-link>
-            </van-grid-item>
-        </van-grid>
+            </van-col>
+        </van-row>
 
-       <!-- <img :src="routers[0].icon" class="carouselImg"/>-->
+        <tabDate :dayTime="indexArr.week" v-if="indexArr.week.length > 0" @changeDate="changeDate(arguments)"></tabDate>
 
-        <TabDate :dayTime="indexArr.week" v-if="indexArr.week.length > 0" @changeDate="changeDate(arguments)"></TabDate>
+        <!--推荐课程-->
+        <section>
+            <van-row type="flex" justify="space-between" class="index-title">
+                <h4>推荐课程</h4>
+                <div>更多课程</div>
+            </van-row>
+            <van-row type="flex" :gutter="10">
+                <div class="no-data" v-if="indexArr.data.length == 0">
+                    <van-empty description="暂无数据" />
+                </div>
+                <van-col span="8" v-for="(item, index) in indexArr.data" :key="index" class="index-course" v-else
+                @click="goCourseDetails(item)">
+                    <van-image :src="item.courseimage" fit="cover"></van-image>
+                    <div class="routerName">{{item.course_name}}</div>
+                </van-col>
 
-        {{indexArr.data}}
+            </van-row>
+        </section>
 
         <navFooter></navFooter>
     </div>
@@ -31,7 +46,7 @@
 
 <script>
     import {tkIndex} from '../../assets/js/ApiData'
-    import TabDate from "../../components/tabDate/tabDate";
+    import tabDate from "../../components/tabDate/tabDate";
 
     // import navFooter from "../../components/navFooter/navFooter";
     export default {
@@ -43,20 +58,20 @@
                     {
                         name: '团课',
                         url: '/groupIndex',
-                        icon: require('@/assets/images/userHeader.png'),
+                        icon: require('@/assets/images/index/index_course.png'),
                         code: '1'
                     },
                     {
                         name: '私教',
                         url: '/trainerIndex',
-                        icon: require('@/assets/images/userHeader.png'),
+                        icon: require('@/assets/images/index/index_coach.png'),
                         code: '2'
                     },
                     {
                         name: '训练营',
                         url: '/campIndex',
-                        icon: require('@/assets/images/userHeader.png'),
-                        code: '2'
+                        icon: require('@/assets/images/index/index_training.png'),
+                        code: '3'
                     },
                     // {
                     //   name: '动感单车',
@@ -87,7 +102,6 @@
             changeDate(val){
                 let dayVal = val[0];
                 this.tkArr.day = dayVal ;
-
                 this.getTkIndex();
             },
 
@@ -104,17 +118,30 @@
                     console.log(res);
                 })
             },
+
+            // 去课程详情页
+            goCourseDetails(val){
+                console.log(val);
+                let day = this.tkArr.day;
+                console.log(day);
+                console.log(val);
+
+                // return false
+                this.$router.push({
+                    name:'groupDetails',
+                    params:{
+                        day:day,
+                        groupDetailsId:val.course_id,
+                    }
+                })
+            },
         },
         created() {
-            let indexData = this.indexArr.data;
-            console.log(indexData.length);
-            if( indexData.length == 0){
-                this.getTkIndex();
-            }
+            this.getTkIndex();
+
         },
         components:{
-
-            TabDate,
+            tabDate,
         }
     }
 </script>

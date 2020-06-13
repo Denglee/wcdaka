@@ -14,8 +14,13 @@ import { get, post } from './axios';
  * 最后通过export导出topics。
  */
 
-/*
-A、登录
-* */
 
-export const tkIndex = params => get('Applet/Index/tk_index', params); /* 首页 index */
+// 团课
+export const tkIndex = params => post('Applet/Index/tk_index', params); /* 团课 / 首页 index */
+
+// trainer 教练
+export const trainerIndex = params => post('Applet/Index/staff_index', params); /* 教练 index */
+
+
+// 入会卡
+export const cardIndex = params => post('Applet/Index/card_index', params); /* 教练 index */

@@ -5,61 +5,59 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    redirect: "/index",
-  },
-  // {
-  //   path: "/home",
-  //   name: "home",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ "../views/home/home.vue"),
-  // },
+    {
+      path: "/",
+      redirect: "/index",
+    },
 
-  //首页
-  {
-    path: "/index",
-    name: "index",
-    component: () => import(/* webpackChunkName: "about" */ "../views/index/index.vue"),
-  },
+    //首页
+    {
+      path: "/index",
+      name: "index",
+      component: () => import(/* webpackChunkName: "about" */ "../views/index/index.vue"),
+    },
 
 
-  /*团课*/
-  {
-    path: "/groupIndex",
-    name: "groupIndex",
-    component: () => import(/* groupIndex: "about" */ "../views/group/groupIndex.vue"),
-  },
+    /*团课*/
+    {
+      path: "/groupIndex",
+      name: "groupIndex",
+      component: () => import(/* groupIndex: "about" */ "../views/group/groupIndex.vue"),
+    },
+    {
+      path: "/groupDetails",
+      name: "groupDetails",
+      component: () => import(/* groupIndex: "groupDetails" */ "../views/group/groupDetails.vue"),
+    },
 
-  /*私教*/
-  {
-    path: "/trainerIndex",
-    name: "trainerIndex",
-    component: () => import(/* webpackChunkName: "trainerIndex" */ "../views/trainer/trainerIndex"),
-  },
 
-  /*训练营*/
-  {
-    path: "/campIndex",
-    name: "campIndex",
-    component: () => import(/* webpackChunkName: "campIndex" */ "../views/camp/campIndex"),
-  },
+    /*私教*/
+    {
+      path: "/trainerIndex",
+      name: "trainerIndex",
+      component: () => import(/* webpackChunkName: "trainerIndex" */ "../views/trainer/trainerIndex"),
+    },
 
-  /*购卡*/
-  {
-    path: "/cardIndex",
-    name: "cardIndex",
-    component: () => import(/* webpackChunkName: "campIndex" */ "../views/card/cardIndex"),
-  },
+    /*训练营*/
+    {
+      path: "/campIndex",
+      name: "campIndex",
+      component: () => import(/* webpackChunkName: "campIndex" */ "../views/camp/campIndex"),
+    },
 
-  /*我的*/
-  {
-    path: "/userIndex",
-    name: "userIndex",
-    component: () => import(/* webpackChunkName: "campIndex" */ "../views/user/userIndex"),
-  },
+    /*购卡*/
+    {
+      path: "/cardIndex",
+      name: "cardIndex",
+      component: () => import(/* webpackChunkName: "campIndex" */ "../views/card/cardIndex"),
+    },
+
+    /*我的*/
+    {
+      path: "/userIndex",
+      name: "userIndex",
+      component: () => import(/* webpackChunkName: "campIndex" */ "../views/user/userIndex"),
+    },
 
 
 ];

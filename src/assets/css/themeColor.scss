@@ -13,7 +13,7 @@ $color-GrayE5:#EFEEF5;
 
 
 $color-Pink:#ff8a7e;
-$color-MediumBlue:#005ad4;
+//$color-MediumBlue:#005ad4;
 $color-MediumBlue2:#00a0e9;
 $color-Violet:#8763ce;
 $color-GreenBlue:#1eaaa1;
@@ -23,6 +23,11 @@ $color-Yellow:#ffbe00;
 
 $color-thBG:rgba(0,90,212,0.03);
 
+
+//主打
+$themeColor:#005ad4;       //主题色
+$themeBgColor:#eff2f9;     //背景  border
+$themeFontColor:#DCDFE6;   //文字
 
 
 @mixin fontColor($color){
@@ -35,7 +40,7 @@ $color-thBG:rgba(0,90,212,0.03);
   @include fontColor($color-Pink);
 }
 .color-MediumBlue{
-  @include fontColor($color-MediumBlue);
+  @include fontColor($themeColor);
 }
 .color-MediumBlue2{
   @include fontColor($color-MediumBlue2);

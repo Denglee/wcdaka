@@ -1,14 +1,11 @@
 <template>
-    <div class="tabbar-box">
-        <van-tabbar route  v-model="active" active-color="#005ad4" inactive-color="#000">
+    <div class="tabBar-box">
+        <van-tabbar route  v-model="active" active-color="#005ad4" inactive-color="#979797">
             <van-tabbar-item v-for="(item, index) in routerArr" :to="item.routerTo">
                 <i class="iconfont" :class="item.iconName"></i>
                 {{item.name}}
             </van-tabbar-item>
         </van-tabbar>
-
-        <van-button type="default" size="small" @click="btnRefush" :loading = 'loadState.searchLoad' loading-text="加载中...">默认按钮</van-button>
-
     </div>
 </template>
 
@@ -43,9 +40,8 @@
     }
 </script>
 <style lang="scss">
-
-    .tabbar-box{
-        margin-top: 60px;
+    .tabBar-box{
+        height: 60px;
         .iconfont{
             display: block;
             font-size: 24px;
